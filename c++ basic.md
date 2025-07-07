@@ -1,14 +1,11 @@
 ## Universal Header
 
 > `#include<bits/stdc++.h>`
-
 ## printing Hello in C++
 
 header file in C++ :  ```#inlcude<iostream>```
 
 * `std` is called Namespace where print command `cout` stays
-
-  
 
 ```cpp
 #include<iostream>
@@ -19,10 +16,7 @@ int main(){
 }
 ```
 
-  
-
 ## Printing Variable In C++
-
 
 ```cpp
 
@@ -37,9 +31,6 @@ int main()
 }
 
 ```
-
-  
-
 ## End line / next Line
 
  *  \n
@@ -50,14 +41,9 @@ cpp std :: endl
 
 ```
 
-  
-
 ## Using `std` as Namespace, taking input , Ascii- num/char
 
-  
-
 ```cpp
-
 #include<iostream>
 
 using namespace std; //use this as one so that dont have to use again n again
@@ -87,11 +73,7 @@ int main(){
 
 ```
 
-  
-
 ## EoF-( End of File), While Loop
-
-  
 
 ```cpp
 
@@ -110,17 +92,13 @@ int main(){
 
 ```
 
-  
-
 ## Setprecision
 
 ### Format
-
 *  Have to add `include<iomanip`
 
 * cout<< fixed << setprecision(num of digit want to print after point / decimal) << variable name;
 
-  
 
 ```cpp
 
@@ -141,8 +119,6 @@ int main(){
 }
 
 ```
-
-  
 
 ## If-Else Loop
 
@@ -178,13 +154,10 @@ int main(){
 
 ```
 
-  
-
 ## Ternary Operator
 
 * **formate**: (condition) ? true  : False
 
-  
 
 ```cpp
 
@@ -203,12 +176,7 @@ int main(){
 }
 
 ```
-
-  
-
 ## Switch Case
-
-  
 
 ```cpp
 
@@ -225,7 +193,6 @@ int main(){
     switch (x)
 
     {
-
     case 'a':
 
         cout << "Vowel\n";
@@ -267,9 +234,6 @@ int main(){
 }
 
 ```
-
-  
-
 ## Min/Max , Swap
 
 * Do it using normal if else loop, and temp variable
@@ -294,9 +258,6 @@ int main(){
 }
 
 ```
-
-  
-
 ## Strings in C++
 
 - After using `cin >> x`, a **newline character (`\n`)** remains in the input buffer. `cin.getline()` would immediately read that newline instead of a new line of text. So, `cin.ignore()` clears the buffer so that `getline` works correctly.
@@ -318,7 +279,6 @@ int main() {
 
 # Difference Between Stack Memory and Heap Memory
 ---
-
 ##  Stack Memory
 
 - **Definition**: Stack memory is a region of memory that stores temporary variables created by each function (also known as an execution stack).
@@ -334,7 +294,6 @@ int main() {
 - **Lifespan**: Variables are destroyed once the function call is completed.
 ##  Heap Memory
 
-
 - **Definition**: Heap memory is used for dynamic memory allocation. Variables are allocated manually and stay allocated until they are explicitly freed.
 
 - **Memory Allocation**: Managed via functions like `malloc`, `calloc`, `new`, etc.
@@ -342,9 +301,6 @@ int main() {
 - **Speed**: Slower access compared to stack due to the overhead of dynamic allocation.
 
 - **Size**: Larger than the stack.
-
-  
-
 ##  Dynamic Variable
 
 #### **dynamic memory** is allocated at **runtime** using special operators:
@@ -394,7 +350,6 @@ int* fun() {
 - যখন `fun()` ফাংশন শেষ হয়ে যায়, তখন স্ট্যাক থেকে `a` অ্যারে **ডিলিট** হয়ে যায়।
 
 - তাই `main()` ফাংশনে যখন তুমি `p[i]` দিয়ে অ্যারে প্রিন্ট করার চেষ্টা করো, তখন **অনির্দিষ্ট আচরণ** (undefined behavior) হয়।
-
 ### Dynamic Array
 
 ```cpp
@@ -416,7 +371,6 @@ int* fun() {
 ```
 
 ---
-
 ### Differences
 
 | বিষয়             | Static Array              | Dynamic Array                             |
@@ -427,12 +381,9 @@ int* fun() {
 | রিটার্ন করা      | ঝুঁকিপূর্ণ                 | নিরাপদ                                    |
 | নমনীয়তা         | ফিক্সড সাইজ                | রানে সময়ে সাইজ নির্ধারণ সম্ভব           |
  
-
 ---
-
 ## Increase Size of an Array & Delete an Array
 
-  
 
 ```cpp
 #include <bits/stdc++.h>
@@ -483,8 +434,6 @@ class_name object_name;
 object_name.class_variable   [ অবজেক্ট এর ক্লাস ভেরিয়েবলগুলো এক্সেস করতে হলে . (ডট) ব্যাবহার করতে হয় ]
 
 ```
-
-
 ## Example
 
 ```cpp
@@ -644,4 +593,604 @@ int main()
 
 }
 
+```
+
+---
+
+# Dynamic Object Creation
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Student
+
+{
+
+public:
+
+ int roll;
+
+ int cls;
+
+ double gpa;
+
+ Student(int roll, int cls, double gpa)
+
+ {
+
+ this->roll = roll;
+
+ this->cls = cls;
+
+ this->gpa = gpa;
+
+ }
+
+};
+
+Student *fun() // ফাংশনটি একটি পয়েন্টার রিটার্ন করবে, পয়েন্টার এর টাইপ Student* তাই ফাংশনের রিটার্ন টাইপও Student*
+
+{
+
+ Student* rahim = new Student(342, 5, 4.99); // new কি-ওয়ার্ড ব্যাবহার করে Student টাইপের একটি ডায়নামিক অবজেক্ট ক্রিয়েট করা হয়েছে। ডায়নামিক অবজেক্ট পয়েন্টারে স্টোর রাখার জন্য একটি পয়েন্টার নেওয়া হয়েছে rahim নামের।
+
+ return rahim; // পয়েন্টার রিটার্ন করা হচ্ছে, যা পয়েন্ট করছে একটি ডায়নামিক অবজেক্টকে। তাই ফাংশন থেকে রিটার্ন হওয়ার পরও এই পয়েন্টার দিয়ে ডায়নামিক অবজেক্টকে এক্সেস করা যাবে। 
+
+}
+
+int main()
+
+{
+
+ Student *ans = fun(); // ফাংশন কল করা হয়েছে এবং ফাংশন থেকে রিটার্ন আসা অবজেক্ট এর পয়েন্টারটি স্টোর রাখার জন্য আরেকটি Student* টাইপের পয়েন্টার নেওয়া হয়েছে।
+
+ cout << ans->roll << " " << ans->cls << " " << ans->gpa << endl; // ডায়নামিক অবজেক্ট প্রিন্ট করা হচ্ছে। 
+
+ delete ans; // প্রিন্ট করার পর ডায়নামিক অবজেক্ট ডিলিট করে দেওয়া যেতে পারে।
+
+ return 0;
+
+}
+
+```
+
+# Sorting in C++
+---
+### *Format : `sort( starting_pointer, ending_pointer);`
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+
+{
+
+ int n;
+
+ cin >> n; // সাইজ ইনপুট নেওয়া হচ্ছে। 
+
+ int a[n]; // সেই সাইজের এরে ডিক্লেয়ার করা হচ্ছে। 
+
+ for (int i = 0; i < n; i++) 
+
+ {
+
+ cin >> a[i]; // এরে ইনপুট নেওয়া হচ্ছে। 
+
+ }
+
+ sort(a, a + n); // ascending order সর্ট ফাংশনের মধ্যে স্টারটিং পয়েন্টার হিসেবে এরের প্রথম ইন্ডেক্স এবং এন্ডিং পয়েন্টার হিসেবে এরের সাইজ দিয়ে দেওয়া হচ্ছে। তাহলে ০ ইনডেক্স থেকে সাইজ-১ ইন্ডেক্স পর্যন্ত সর্ট হবে অর্থাৎ সম্পূর্ণ এরেটি সর্ট হবে। আমরা যদি a+3 লিখতাম তাহলে ০ ইন্ডেক্স থেকে ২ ইনডেক্স পর্যন্ত সর্ট হতো। 
+sort(a, a + n, greater<int>()); //descending order সর্ট ফাংশনের মধ্যে স্টারটিং পয়েন্টার হিসেবে এরের প্রথম ইন্ডেক্স এবং এন্ডিং পয়েন্টার হিসেবে এরের সাইজ দিয়ে দেওয়া হচ্ছে। বড় থেকে ছোট অর্ডারে সর্ট করতে চাই তাই greater ফাংশনকে কল করা হয়েছে তার মধ্যে এরের ডাটা টাইপ int দিয়ে দেওয়া হয়েছে। 
+ for (int i = 0; i < n; i++)
+
+ {
+
+ cout << a[i] << " "; // এরে প্রিন্ট করা হচ্ছে। 
+
+ }
+
+ return 0;
+
+}
+```
+
+# *practice_Problem_1* 
+
+### `Question:`
+
+Create three static objects with the help of the constructor of the following class.
+
+Student  
+{  
+name;  
+roll;  
+section;  
+math_marks;  
+cls;  
+}
+
+Then compare those 3 objects and print who got the highest math_marks and print his/her name.
+
+
+### Solve:
+
+```cpp
+#include<bits/stdc++.h>  // সব স্ট্যান্ডার্ড C++ লাইব্রেরি ইনক্লুড করার শর্টকাট
+using namespace std;     // বারবার std:: না লিখে সরাসরি cout, cin ব্যবহার করতে পারবো
+
+// Student ক্লাস ডিক্লেয়ার করছি
+class student {
+public:
+    string name;        // স্টুডেন্টের নাম
+    int roll;           // রোল নাম্বার
+    int section;        // সেকশন নম্বর
+    double math_mark;   // গণিতের নাম্বার (double টাইপ, দশমিক সহ)
+    int cls;            // কোন ক্লাসে পড়ে
+
+    // Constructor: Object তৈরি করার সময় প্রপার্টি সেট করার জন্য
+    student(string n, int r, int s, double mm, int c) {
+        name = n;            // নাম সেট করছি
+        roll = r;            // রোল সেট করছি
+        section = s;         // সেকশন সেট করছি
+        math_mark = mm;      // গণিত নাম্বার সেট করছি
+        cls = c;             // ক্লাস সেট করছি
+    }
+};
+
+int main() {
+    // ৩টি Static student object তৈরি করছি
+    student s1("nirob", 12, 2, 87, 5);
+    student s2("tirob", 21, 2, 97, 5);
+    student s3("pirob", 15, 2, 99, 5);
+
+    // শুরুতে ধরে নিচ্ছি s1 ই highest
+    student highest = s1;
+
+    // যদি s2 এর নাম্বার highest এর চেয়ে বেশি হয়, তাহলে highest কে s2 বানাবো
+    if (s2.math_mark > highest.math_mark) {
+        highest = s2;
+    }
+
+    // এরপর s3 এর নাম্বার যদি highest এর চেয়ে বেশি হয়, তাহলে highest কে s3 বানাবো
+    if (s3.math_mark > highest.math_mark) {
+        highest = s3;
+    }
+
+    // সর্বোচ্চ নাম্বারধারী স্টুডেন্টের নাম আর নাম্বার প্রিন্ট করবো
+    cout << highest.name << endl;
+    cout << highest.math_mark << endl;
+
+    return 0;  // প্রোগ্রাম শেষ
+}
+
+```
+
+# *Practice Problem-2*
+
+### `Question`
+
+**Create a dynamic object named dhoni of the following class. Don’t use a constructor here, that means you need to fill the data by yourself.
+
+Cricketer  
+{  
+jersey_no;  
+country;  
+}
+
+Then make another dynamic object named kohli and copy the data of the dhoni object to kohli and after that delete the dhoni object. Then print the jersey_no and country of kohli object.
+
+Note: At first try to do this, kohli=dhoni and see if it gives the correct output. If not, then think deeply why it didn’t work and try to copy the data manually like kohli->jersey_no=dhoni->jersey_no;**
+
+### `Solve:`
+
+```cpp
+#include<bits/stdc++.h>  // সব C++ স্ট্যান্ডার্ড লাইব্রেরি ইনক্লুড করার শর্টকাট
+using namespace std;     // std:: না লিখে সরাসরি cout, cin ব্যবহার করতে পারবো
+
+// ✅ Cricketer নামে একটি ক্লাস তৈরি করছি
+class Cricketer {
+public:
+    int jersey_no;      // Cricketer এর জার্সি নাম্বার
+    string country;     // Cricketer এর দেশের নাম
+};
+
+int main() {
+
+    // ✅ Step 1: dhoni নামে Dynamic Object তৈরি করছি
+    Cricketer* dhoni = new Cricketer;
+    // এখানে new keyword দিয়ে Heap memory তে Cricketer type এর জন্য জায়গা বরাদ্দ করা হলো
+    // এবং dhoni pointer সেই জায়গার ঠিকানা ধরে রাখছে।
+
+    // ✅ Step 2: dhoni object এর Data ম্যানুয়ালি সেট করছি
+    dhoni->jersey_no = 7;              // dhoni এর জার্সি নাম্বার 7 সেট করছি
+    dhoni->country = "India";          // dhoni এর দেশ India সেট করছি
+
+    // ✅ Step 3: kohli নামে আরেকটা Dynamic Object তৈরি করছি
+    Cricketer* kohli = new Cricketer;
+    // kohli এখন heap memory তে নতুন Cricketer object কে point করছে।
+
+    // ✅ Step 4: ভুল চেষ্টা (পৃথিবি কপি না করে pointer address copy)
+    //kohli = dhoni;
+    // ⚠️ Warning: এই লাইন চালালে শুধু pointer address copy হবে।
+    // অর্থাৎ kohli আর dhoni দুইটাই একই object কে point করবে।
+    // তাই এটা কমেন্ট করে রেখেছি।
+
+    // ✅ Step 5: সঠিক উপায় --> Data manually copy করা
+    kohli->jersey_no = dhoni->jersey_no;    // dhoni এর জার্সি নাম্বার kohli কে দিচ্ছি
+    kohli->country = dhoni->country;        // dhoni এর দেশ kohli কে দিচ্ছি
+
+    // ✅ Step 6: dhoni object delete করা
+    delete dhoni;
+    // এখানে dhoni pointing করা heap memory free করে দিচ্ছি।
+    // এখন dhoni আর কোন valid object point করছে না (dangling pointer হলে Access না করা উচিত)।
+
+    // ✅ Step 7: kohli এর ডেটা প্রিন্ট করা
+    cout << kohli->jersey_no << endl;    // kohli এর জার্সি নাম্বার প্রিন্ট করবো
+    cout << kohli->country << endl;      // kohli এর country প্রিন্ট করবো
+    // এখানে প্রিন্ট হবে:
+    // 7
+    // India
+
+    // ✅ Step 8: Memory leak রোধের জন্য kohli delete করা (Good Practice)
+    delete kohli;
+    // kohli এর জন্য আলাদা করে allocate করা heap memory free করা হলো।
+
+    return 0;  // প্রোগ্রাম সফলভাবে শেষ
+}
+```
+
+# Practice Problem-3
+
+### `Question`
+
+[V. Comparison](https://codeforces.com/group/MWSDmqGsZm/contest/219158/problem/V)
+
+### `solve`
+```cpp
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+
+    int a,b;
+
+    char s;
+
+    cin >> a >> s >> b;
+
+    if( s == '<')
+
+    {
+
+        if (a < b)
+
+        {
+
+            cout << "Right" << endl;
+
+        }
+
+        else
+
+        {
+
+            cout << "Wrong" << endl;
+
+        }
+
+    }
+
+    else if (s == '>')
+
+    {
+
+        if(a>b){cout << "Right" << endl;}
+
+        else
+
+        {
+
+            cout << "Wrong" << endl;
+
+        }
+
+    }
+
+    else if (s == '=')
+
+    {
+
+        if (a==b)
+
+        {
+
+            cout << "Right" << endl;
+
+  
+
+        }
+
+        else{
+
+            cout << "Wrong" << endl;
+
+        }
+
+    }
+
+    return 0;
+
+}
+```
+
+# Practice Problem-4
+
+### `Question`
+
+**Problem Statement**
+
+You will be given an array **A** and the size of that array **N**. You need to create a function named **sort_it()**. After taking the input for the size in main function, call that function by giving the size as parameter and take the array input inside that function. After that, you need to sort the array in descending order. Then, return that array from the function and receive it in the main function. Finally, print the sorted array in the main function.
+
+**Input Format**
+
+- First line will contain **N**.
+- Second line will contain the array **A**.
+
+**Constraints**
+
+1. 1 <= **N** <= 10^5
+2. -10^9 <= **A[i]** <= 10^9 Where 0 <= i < N
+
+**Output Format**
+
+- Ouptut the array in descending order.
+
+```
+**Sample Input 0**
+
+5
+1 4 2 3 5
+
+**Sample Output 0**
+
+5 4 3 2 1
+```
+
+### `Solve`
+
+```cpp
+#include<bits/stdc++.h>
+
+using namespace std;
+
+  
+
+int* sort_it(int n)
+
+{
+
+    int* ar = new int[n];  
+
+    for (int i = 0; i < n; i++)
+
+    {
+
+        cin >> ar[i];
+
+    }
+
+  
+
+    sort(ar, ar + n, greater<int>());
+
+  
+
+    return ar;  
+
+}
+
+  
+
+int main() {
+
+    int n;
+
+    cin >> n;  
+
+  
+
+    int* sorted_array = sort_it(n);
+
+  
+
+    for (int i = 0; i < n; i++) {
+
+        cout << sorted_array[i] << " ";
+
+    }
+
+    cout << endl;
+
+  
+
+    delete[] sorted_array;
+
+  
+
+    return 0;
+
+}
+```
+
+# Practice Problem-5
+
+**Problem Statement:**
+
+**Amena** has just learned alphabets. She can read write from **a** to **z** only in lowercase. But, Amena always writes in alphabetic order (alphabetic order means from a to z in sorted order) what she saw. Also she writes a line as a word. For example, she writes monkey as ekmnoy. Her mother wants to test her reading and writing skills. Her mother gave her some lines, can you tell what she will write?
+
+**Note**: Input will be given by **EOF**.
+
+**Input Format**
+
+- Input consist of a line **S**. The line will contain lowercase letters and spaces. It is possible that there are multiple spaces together and the line end with spaces.
+
+**Constraints**
+
+1. 1 <= **|S|** <= 10^5
+
+**Output Format**
+
+- Output what Amena will write.
+
+#### `Sample Input 0*
+monkey
+i love flower
+#### `Sample Output 0
+
+ekmnoy
+eefilloorvw
+
+### `Solve:`
+
+```cpp
+#include<bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+
+    string s;
+    while (getline(cin, s))
+    {
+        string temp = "";
+        for (char c : s) {
+            if (c >= 'a' && c <= 'z')
+
+            {
+                temp += c;
+            }
+        }
+        sort(temp.begin(), temp.end());
+
+        cout << temp << endl;
+
+    }
+
+    return 0;
+}
+```
+
+
+# Practice Problem-6
+
+### `Question`
+
+**Problem Statement**
+
+You will be given an array **A** and the size of that array **N**. Additionally, you will be given a sum **S**. Your task is to determine whether it is possible to select three distinct indexed values from the array such that their summation equals **S**.
+
+**Input Format**
+
+- First line will contain **T**, the number of test cases.
+- First line of each test case will contain **N** and **S**.
+- Second line of each test case will contain the array **A**.
+
+**Constraints**
+
+1. 1 <= **T** <= 100
+2. 1 <= **N** <= 100
+3. 1 <= **S** <= 1000
+4. 1 <= **A[i]** <= 1000 Where 0 <= i < N
+
+**Output Format**
+
+- Output "**YES**" if it is possible, otherwise output "**NO**".
+
+**Sample Input 0**
+
+5
+5 10
+1 2 3 4 5
+5 6
+4 2 3 5 4
+3 6
+2 2 2
+4 4
+2 8 1 5
+1 3
+1
+
+**Sample Output 0**
+
+YES
+NO
+YES
+NO
+NO
+
+**Explanation 0**
+
+```
+In the first test case, we can make 10 by adding 5+4+1. There are other ways too.
+In the second test case, it is not possible to make 6 by adding three different indexed values from the array.
+In the third case, it is possible to make 6 by using three different indexed values.
+```
+
+### `Solve:`
+
+```cpp
+#include <bits/stdc++.h>   // সব C++ স্ট্যান্ডার্ড লাইব্রেরি একসাথে ইমপোর্ট করার শর্টকাট
+using namespace std;      // std:: না লিখতে পারার জন্য, সরাসরি cout, cin ব্যবহার করার সুবিধা
+
+int main() 
+{
+    int T;              // T = টেস্টকেসের সংখ্যা
+    cin >> T;           // ইউজার থেকে T এর মান ইনপুট নিচ্ছি
+
+    while (T--)         // T বার এই লুপ চলবে (প্রতিটি টেস্টকেসের জন্য)
+    {
+        int N, S;       // N = অ্যারের সাইজ, S = টার্গেট স্যাম (যোগফল)
+        cin >> N >> S;  // ইউজার থেকে N এবং S ইনপুট নিচ্ছি
+
+        vector<int> A(N);   // N সাইজের ভেক্টর (ডাইনামিক অ্যারে) ডিক্লেয়ার করছি
+
+        for (int i = 0; i < N; i++)  // N বার লুপ চালিয়ে
+        {
+            cin >> A[i];             // প্রতিটা ভ্যালু ইউজার থেকে ইনপুট নিচ্ছি
+        }
+
+        bool found = false;     // found ভ্যারিয়েবল বলে দেবে আমরা কি তিনটি সংখ্যা পেয়েছি নাকি না
+
+        // নিচের তিনটি নেস্টেড লুপ দিয়ে আমরা তিনটি ভিন্ন ইনডেক্সে এমন তিনটি সংখ্যা খুঁজছি যার যোগফল S এর সমান
+        for (int i = 0; i < N && !found; i++) 
+        {
+            for (int j = i + 1; j < N && !found; j++) 
+            {
+                for (int k = j + 1; k < N && !found; k++) 
+                {
+                    // যদি তিনটি সংখ্যার যোগফল S এর সমান হয়
+                    if (A[i] + A[j] + A[k] == S) 
+                    {
+                        found = true;    // তাহলে found কে true করে দাও
+                    }
+                }
+            }
+        }
+
+        if (found)      // যদি found true হয়
+        {
+            cout << "YES" << endl;   // আউটপুট দাও "YES"
+        }
+        else            // না হলে
+        {
+            cout << "NO" << endl;    // আউটপুট দাও "NO"
+        }
+    }
+    return 0;   // প্রোগ্রাম শেষ
+}
 ```
