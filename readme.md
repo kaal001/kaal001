@@ -55,64 +55,6 @@ I enjoy learning how things work behind the scenes and turning that knowledge in
   <img src="https://skillicons.dev/icons?i=git,github,vscode,linux,kali" />
 </p>
 
-## Featured Projects
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### LifeOS
-
-**Your Personal Growth System**
-
-A personal productivity and life-management platform connecting academics, habits, fitness and personal development.
-
-- Task and habit management
-- Productivity analytics
-- Personal growth tracking
-- Supabase integration
-
-**Stack:** Next.js · TypeScript · Tailwind CSS · Supabase
-
-</td>
-<td width="50%" valign="top">
-
-### School Management System
-
-A desktop-based application for managing school-related information.
-
-- Database-driven architecture
-- Desktop user interface
-- Structured data management
-
-**Stack:** Python · PyQt5 · SQLite
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### Emergency Management System
-
-A Java desktop application developed to explore practical software development and object-oriented programming.
-
-**Stack:** Java · Java Swing
-
-</td>
-<td width="50%" valign="top">
-
-### Research Exploration
-
-Exploring research directions in Artificial Intelligence and Computer Vision.
-
-- Computer Vision
-- Deep Learning
-- Vision-Language Models
-- Empirical research
-
-</td>
-</tr>
-</table>
 
 ## Current Interests
 
